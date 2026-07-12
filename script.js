@@ -41,3 +41,52 @@ if (spotlight && window.matchMedia("(hover: hover)").matches) {
     spotlight.style.setProperty("--y", `${e.clientY}px`);
   });
 }
+
+const SUPABASE_URL = "https://vjgvzqkbdxdsxdjclchh.supabase.co";
+const SUPABASE_KEY = "sb_publishable_Eg3tykKkB8sQZ0_rDrv-DA_liLzCyVI";
+
+let supabaseClient = null;
+try {
+  supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+} catch (err) {
+  console.error("Supabase client failed to initialize:", err);
+}
+
+const contactForm = document.getElementById("contact-form");
+const formStatus = document.getElementById("form-status");
+
+if (contactForm) {
+  contactForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    if (!supabaseClient) {
+      formStatus.textContent = "Something went wrong. Please try again.";
+      formStatus.classList.add("error");
+      console.error("Supabase client is not available.");
+      return;
+    }
+
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    submitBtn.disabled = true;
+    formStatus.classList.remove("error");
+    formStatus.textContent = "Sending…";
+
+    const { error } = await supabaseClient.from("messages").insert({
+      name: contactForm.name.value,
+      email: contactForm.email.value,
+      message: contactForm.message.value,
+    });
+
+    submitBtn.disabled = false;
+
+    if (error) {
+      formStatus.textContent = "Something went wrong. Please try again.";
+      formStatus.classList.add("error");
+      console.error(error);
+      return;
+    }
+
+    formStatus.textContent = "Thank you, message sent";
+    contactForm.reset();
+  });
+}

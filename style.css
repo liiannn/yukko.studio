@@ -415,6 +415,62 @@ a:hover {
   font-size: 1.05rem;
 }
 
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 480px;
+  margin-top: 2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.form-group input,
+.form-group textarea {
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--text);
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.65rem 0.9rem;
+  resize: vertical;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--accent-2);
+  box-shadow: 0 0 0 3px rgba(217, 123, 61, 0.2);
+}
+
+.contact-form .btn-glow {
+  align-self: flex-start;
+  border: none;
+  cursor: pointer;
+}
+
+.form-status {
+  font-size: 0.9rem;
+  color: #e5c7ae;
+  min-height: 1.2em;
+}
+
+.form-status.error {
+  color: #e07a5f;
+}
+
 /* Footer */
 footer {
   text-align: center;
