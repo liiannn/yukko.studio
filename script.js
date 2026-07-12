@@ -71,11 +71,14 @@ if (contactForm) {
     formStatus.classList.remove("error");
     formStatus.textContent = "Sending…";
 
-    const { error } = await supabaseClient.from("messages").insert({
+    const { data, error } = await supabaseClient.from("messages").insert({
       name: contactForm.name.value,
       email: contactForm.email.value,
       message: contactForm.message.value,
     });
+
+    console.log("data:", data);
+    console.log("error:", error);
 
     submitBtn.disabled = false;
 
