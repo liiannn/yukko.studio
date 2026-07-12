@@ -6,7 +6,7 @@
 <title>Lia Lien — Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,900;1,400&family=Plaster&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,900;1,400&family=IBM+Plex+Mono:wght@400;500&family=Plaster&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -21,21 +21,50 @@
   <div class="grain" aria-hidden="true"></div>
   <div class="spotlight" aria-hidden="true"></div>
 
-  <nav class="navbar">
+  <header class="site-header">
     <a href="#hero" class="nav-logo"><span class="nav-logo-mirror">L</span>L</a>
-    <ul class="nav-links">
-      <li><a href="#hero">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+    <p class="local-clock" id="local-clock">LOCAL TIME: --:--:--</p>
+
+    <nav class="nav-marks">
+      <a href="#hero" class="nav-mark">01 // HOME</a>
+      <span class="nav-sep" aria-hidden="true">·</span>
+      <a href="#about" class="nav-mark">02 // ABOUT</a>
+      <span class="nav-sep" aria-hidden="true">·</span>
+      <a href="#skills" class="nav-mark">03 // SKILLS</a>
+      <span class="nav-sep" aria-hidden="true">·</span>
+      <a href="#projects" class="nav-mark">04 // PROJECTS</a>
+      <span class="nav-sep" aria-hidden="true">·</span>
+      <a href="#contact" class="nav-mark">05 // CONTACT</a>
+    </nav>
+  </header>
 
   <header class="hero" id="hero">
-    <h1 class="hero-title">
-      <span class="line accent">Lia Lien</span>
-    </h1>
+    <div class="hero-corner-mark" aria-hidden="true">
+      <span class="corner-bracket"></span>
+      <span class="corner-label">FIG. 01 — SELF</span>
+      <span class="corner-label corner-label-sub">REV. 2026.07</span>
+    </div>
+
+    <div class="hero-title-wrap">
+      <div class="annotation annotation-1" aria-hidden="true">
+        <span class="annotation-line"></span>
+        <span class="annotation-label">STATUS // LEARNING</span>
+      </div>
+
+      <h1 class="hero-title">
+        <span class="line accent">Lia Lien</span>
+      </h1>
+
+      <div class="annotation annotation-2" aria-hidden="true">
+        <span class="annotation-line"></span>
+        <span class="annotation-label">50.45°N, 30.52°E</span>
+      </div>
+      <div class="annotation annotation-3" aria-hidden="true">
+        <span class="annotation-line"></span>
+        <span class="annotation-label">SYSTEM: ACTIVE</span>
+      </div>
+    </div>
+
     <div class="hero-sub">
       <p>Learning AI development: websites, automation, bots — building a portfolio from scratch</p>
       <a href="#projects" class="btn-glow">View Works</a>
@@ -43,27 +72,81 @@
   </header>
 
   <section id="about" class="fade-in">
+    <div class="section-corner-mark" aria-hidden="true">
+      <span class="corner-bracket"></span>
+      <span class="corner-label">FIG. 02</span>
+    </div>
+
+    <p class="section-tag">SECTION 01 // ABOUT</p>
     <h2>About</h2>
     <p>I'm a self-taught AI builder, blending a design-driven eye with hands-on technical skills. I learn in public, sharing the projects and progress along the way.</p>
+
+    <div class="section-note" aria-hidden="true">
+      <span class="annotation-line"></span>
+      <span class="annotation-label">NOTE // SELF-TAUGHT</span>
+    </div>
   </section>
 
   <section id="skills" class="fade-in">
+    <div class="section-corner-mark" aria-hidden="true">
+      <span class="corner-bracket"></span>
+      <span class="corner-label">FIG. 03</span>
+    </div>
+
+    <p class="section-tag">SECTION 02 // SKILLS</p>
     <h2>Skills</h2>
-    <ul>
-      <li>Oil Painting</li>
-      <li>Color Theory</li>
-      <li>Composition</li>
+    <ul class="spec-list">
+      <li class="spec-card">
+        <span class="spec-index">SPEC_01</span>
+        <span class="spec-name">Prompt Engineering</span>
+      </li>
+      <li class="spec-card">
+        <span class="spec-index">SPEC_02</span>
+        <span class="spec-name">Web Development</span>
+      </li>
+      <li class="spec-card">
+        <span class="spec-index">SPEC_03</span>
+        <span class="spec-name">Automation & Bots</span>
+      </li>
+      <li class="spec-card">
+        <span class="spec-index">SPEC_04</span>
+        <span class="spec-name">API Integration</span>
+      </li>
     </ul>
   </section>
 
   <section id="projects" class="fade-in">
+    <div class="section-corner-mark" aria-hidden="true">
+      <span class="corner-bracket"></span>
+      <span class="corner-label">FIG. 04</span>
+    </div>
+
+    <p class="section-tag">SECTION 03 // PROJECTS</p>
     <h2>Projects</h2>
-    <p>A selection of recent oil paintings and exhibitions.</p>
+
+    <div class="archive-card">
+      <div class="archive-card-tag">
+        <span>FILE_01</span>
+        <span>REV. 2026.07</span>
+      </div>
+      <p>Personal landing page — built from scratch using Claude Code, from local setup to live deployment. Custom design and  color palette, animated backgrounds, and a working Contact form connected to a Supabase database with automated email notifications via Resend.</p>
+    </div>
   </section>
 
   <section id="contact" class="fade-in">
+    <div class="section-corner-mark" aria-hidden="true">
+      <span class="corner-bracket"></span>
+      <span class="corner-label">FIG. 05</span>
+    </div>
+
+    <p class="section-tag">SECTION 04 // CONTACT</p>
     <h2>Contact</h2>
     <p>Email: your@email.com</p>
+
+    <div class="section-note" aria-hidden="true">
+      <span class="annotation-line"></span>
+      <span class="annotation-label">CHANNEL // EMAIL</span>
+    </div>
 
     <form id="contact-form" class="contact-form" novalidate>
       <div class="form-group">

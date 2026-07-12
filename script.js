@@ -12,7 +12,7 @@ const observer = new IntersectionObserver(
 
 document.querySelectorAll(".fade-in").forEach((el) => observer.observe(el));
 
-const navLinks = document.querySelectorAll(".nav-links a");
+const navLinks = document.querySelectorAll(".nav-mark");
 const sections = document.querySelectorAll("section[id], header[id]");
 
 const navObserver = new IntersectionObserver(
@@ -32,6 +32,40 @@ const navObserver = new IntersectionObserver(
 );
 
 sections.forEach((section) => navObserver.observe(section));
+
+const siteHeader = document.querySelector(".site-header");
+let lastScrollY = window.scrollY;
+
+if (siteHeader) {
+  window.addEventListener(
+    "scroll",
+    () => {
+      const currentY = window.scrollY;
+      const scrollingDown = currentY > lastScrollY;
+
+      siteHeader.classList.toggle("nav-hidden", currentY > 80 && scrollingDown);
+      lastScrollY = currentY;
+    },
+    { passive: true }
+  );
+}
+
+const localClock = document.getElementById("local-clock");
+
+if (localClock) {
+  const updateClock = () => {
+    const time = new Date().toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      hour12: false,
+    });
+    localClock.textContent = `LOCAL TIME: ${time}`;
+  };
+
+  updateClock();
+  setInterval(updateClock, 1000);
+}
 
 const spotlight = document.querySelector(".spotlight");
 
