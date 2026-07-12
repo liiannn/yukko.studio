@@ -167,6 +167,20 @@ body {
   }
 }
 
+/* Comet cursor trail */
+#comet-trail {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+@media (hover: none), (prefers-reduced-motion: reduce) {
+  #comet-trail {
+    display: none;
+  }
+}
+
 section, .hero {
   scroll-margin-top: 96px;
 }
